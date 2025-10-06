@@ -1,0 +1,282 @@
+[
+  {
+    "Id": 1,
+    "shopId": 1,
+    "shopName": "Artisan Canvas Studio",
+    "title": "Abstract Sunset Canvas Print",
+    "description": "Hand-painted abstract art inspired by golden hour sunsets. Each piece is unique and signed by the artist. Perfect for modern living spaces.",
+    "price": 89.99,
+    "category": "Art & Prints",
+    "productType": "physical",
+    "images": [
+      "https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=800",
+      "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=800"
+    ],
+    "videoUrl": "",
+    "inventory": 15,
+    "digitalFileUrl": "",
+    "variants": [
+      { "name": "Size", "options": ["12x16", "16x20", "24x30"], "prices": [89.99, 129.99, 189.99] }
+    ],
+    "rating": 4.8,
+    "reviewCount": 47,
+    "salesCount": 156,
+    "createdAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "Id": 2,
+    "shopId": 2,
+    "shopName": "Crystal & Stone Jewelry",
+    "title": "Handcrafted Turquoise Necklace",
+    "description": "Stunning turquoise stone set in sterling silver. Handmade with love and attention to detail. Chain length: 18 inches with 2-inch extender.",
+    "price": 125.00,
+    "category": "Jewelry",
+    "productType": "physical",
+    "images": [
+      "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800",
+      "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800"
+    ],
+    "videoUrl": "",
+    "inventory": 8,
+    "digitalFileUrl": "",
+    "variants": [
+      { "name": "Metal", "options": ["Sterling Silver", "Gold Plated"], "prices": [125.00, 165.00] }
+    ],
+    "rating": 5.0,
+    "reviewCount": 89,
+    "salesCount": 234,
+    "createdAt": "2024-01-20T14:30:00Z"
+  },
+  {
+    "Id": 3,
+    "shopId": 3,
+    "shopName": "Cozy Home Creations",
+    "title": "Macrame Wall Hanging - Bohemian Style",
+    "description": "Beautiful handwoven macrame wall hanging. Made with 100% natural cotton cord. Adds warmth and texture to any room. Includes wooden dowel.",
+    "price": 68.50,
+    "category": "Home Decor",
+    "productType": "physical",
+    "images": [
+      "https://images.unsplash.com/photo-1595147389795-37094173bfd8?w=800",
+      "https://images.unsplash.com/photo-1616047006789-b7af5afb8c20?w=800"
+    ],
+    "videoUrl": "",
+    "inventory": 12,
+    "digitalFileUrl": "",
+    "variants": [
+      { "name": "Size", "options": ["Small (24in)", "Medium (36in)", "Large (48in)"], "prices": [68.50, 98.50, 138.50] }
+    ],
+    "rating": 4.7,
+    "reviewCount": 34,
+    "salesCount": 98,
+    "createdAt": "2024-02-01T09:15:00Z"
+  },
+  {
+    "Id": 4,
+    "shopId": 4,
+    "shopName": "Digital Art Haven",
+    "title": "Wedding Invitation Template Set",
+    "description": "Complete wedding invitation suite with 12 customizable templates. Includes save-the-date, invitation, RSVP card, thank you card, and more. Instant download.",
+    "price": 29.99,
+    "category": "Digital Downloads",
+    "productType": "digital",
+    "images": [
+      "https://images.unsplash.com/photo-1519741497674-611481863552?w=800",
+      "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800"
+    ],
+    "videoUrl": "",
+    "inventory": 999,
+    "digitalFileUrl": "/downloads/wedding-templates.zip",
+    "variants": [],
+    "rating": 4.9,
+    "reviewCount": 156,
+    "salesCount": 487,
+    "createdAt": "2024-02-05T16:45:00Z"
+  },
+  {
+    "Id": 5,
+    "shopId": 5,
+    "shopName": "Custom Prints Studio",
+    "title": "Personalized Family Portrait",
+    "description": "Custom illustrated family portrait from your photos. Upload your family photo and receive a beautiful digital illustration. Perfect gift for any occasion!",
+    "price": 75.00,
+    "category": "Art & Prints",
+    "productType": "customizable",
+    "images": [
+      "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800",
+      "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800"
+    ],
+    "videoUrl": "",
+    "inventory": 50,
+    "digitalFileUrl": "",
+    "variants": [
+      { "name": "People", "options": ["2 people", "3-4 people", "5+ people"], "prices": [75.00, 95.00, 125.00] }
+    ],
+    "rating": 4.9,
+    "reviewCount": 203,
+    "salesCount": 567,
+    "createdAt": "2024-02-10T11:20:00Z"
+  },
+  {
+    "Id": 6,
+    "shopId": 1,
+    "shopName": "Artisan Canvas Studio",
+    "title": "Mountain Landscape Watercolor",
+    "description": "Serene mountain landscape painted in watercolor. Original artwork printed on high-quality canvas. Each print is inspected for quality before shipping.",
+    "price": 95.00,
+    "category": "Art & Prints",
+    "productType": "physical",
+    "images": [
+      "https://images.unsplash.com/photo-1579762593131-9ff6c0139be7?w=800",
+      "https://images.unsplash.com/photo-1578301978162-7aae4d755744?w=800"
+    ],
+    "videoUrl": "",
+    "inventory": 20,
+    "digitalFileUrl": "",
+    "variants": [
+      { "name": "Size", "options": ["12x16", "16x20", "24x30"], "prices": [95.00, 135.00, 195.00] }
+    ],
+    "rating": 4.6,
+    "reviewCount": 28,
+    "salesCount": 73,
+    "createdAt": "2024-02-12T13:00:00Z"
+  },
+  {
+    "Id": 7,
+    "shopId": 6,
+    "shopName": "Pottery & Clay Works",
+    "title": "Handmade Ceramic Mug Set",
+    "description": "Set of 2 handthrown ceramic mugs with unique glazing. Each mug is one-of-a-kind. Microwave and dishwasher safe. Holds 12oz of your favorite beverage.",
+    "price": 54.00,
+    "category": "Pottery & Ceramics",
+    "productType": "physical",
+    "images": [
+      "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=800",
+      "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=800"
+    ],
+    "videoUrl": "",
+    "inventory": 18,
+    "digitalFileUrl": "",
+    "variants": [
+      { "name": "Color", "options": ["Ocean Blue", "Forest Green", "Sunset Orange", "Midnight Black"], "prices": [54.00, 54.00, 54.00, 54.00] }
+    ],
+    "rating": 4.8,
+    "reviewCount": 92,
+    "salesCount": 245,
+    "createdAt": "2024-02-15T08:30:00Z"
+  },
+  {
+    "Id": 8,
+    "shopId": 2,
+    "shopName": "Crystal & Stone Jewelry",
+    "title": "Rose Quartz Healing Bracelet",
+    "description": "Natural rose quartz crystal bracelet. Known as the stone of love. Elastic band fits most wrist sizes. Comes with meaning card and gift box.",
+    "price": 42.00,
+    "category": "Jewelry",
+    "productType": "physical",
+    "images": [
+      "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800",
+      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800"
+    ],
+    "videoUrl": "",
+    "inventory": 35,
+    "digitalFileUrl": "",
+    "variants": [],
+    "rating": 4.7,
+    "reviewCount": 67,
+    "salesCount": 189,
+    "createdAt": "2024-02-18T10:45:00Z"
+  },
+  {
+    "Id": 9,
+    "shopId": 7,
+    "shopName": "Eco Threads Boutique",
+    "title": "Organic Cotton Tote Bag",
+    "description": "Sustainable tote bag made from 100% organic cotton. Hand-printed with eco-friendly inks. Perfect for shopping, beach days, or everyday use. Machine washable.",
+    "price": 32.00,
+    "category": "Clothing",
+    "productType": "physical",
+    "images": [
+      "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800",
+      "https://images.unsplash.com/photo-1598532163257-ae3c6b2524b6?w=800"
+    ],
+    "videoUrl": "",
+    "inventory": 45,
+    "digitalFileUrl": "",
+    "variants": [
+      { "name": "Design", "options": ["Floral", "Geometric", "Nature", "Abstract"], "prices": [32.00, 32.00, 32.00, 32.00] }
+    ],
+    "rating": 4.5,
+    "reviewCount": 41,
+    "salesCount": 127,
+    "createdAt": "2024-02-20T15:20:00Z"
+  },
+  {
+    "Id": 10,
+    "shopId": 4,
+    "shopName": "Digital Art Haven",
+    "title": "Social Media Branding Kit",
+    "description": "Complete social media branding package with 50+ customizable templates for Instagram, Facebook, and Pinterest. Includes posts, stories, and highlights. Instant download.",
+    "price": 39.99,
+    "category": "Digital Downloads",
+    "productType": "digital",
+    "images": [
+      "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800",
+      "https://images.unsplash.com/photo-1634909046985-b6f6a08e45a2?w=800"
+    ],
+    "videoUrl": "",
+    "inventory": 999,
+    "digitalFileUrl": "/downloads/social-media-kit.zip",
+    "variants": [],
+    "rating": 4.8,
+    "reviewCount": 213,
+    "salesCount": 628,
+    "createdAt": "2024-02-22T12:00:00Z"
+  },
+  {
+    "Id": 11,
+    "shopId": 3,
+    "shopName": "Cozy Home Creations",
+    "title": "Hand-Poured Soy Candle Collection",
+    "description": "Set of 3 hand-poured soy candles in mason jars. Natural essential oil blends: Lavender Dreams, Citrus Burst, Vanilla Comfort. Burns 40+ hours each.",
+    "price": 58.00,
+    "category": "Home Decor",
+    "productType": "physical",
+    "images": [
+      "https://images.unsplash.com/photo-1602874801006-e26d9a3e0f23?w=800",
+      "https://images.unsplash.com/photo-1603006905003-be475563bc59?w=800"
+    ],
+    "videoUrl": "",
+    "inventory": 28,
+    "digitalFileUrl": "",
+    "variants": [],
+    "rating": 4.9,
+    "reviewCount": 118,
+    "salesCount": 342,
+    "createdAt": "2024-02-25T09:40:00Z"
+  },
+  {
+    "Id": 12,
+    "shopId": 5,
+    "shopName": "Custom Prints Studio",
+    "title": "Pet Portrait Illustration",
+    "description": "Custom digital pet portrait from your photo. Beautifully illustrated in a contemporary style. Receive high-res file perfect for printing. Upload your pet's photo!",
+    "price": 65.00,
+    "category": "Art & Prints",
+    "productType": "customizable",
+    "images": [
+      "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=800",
+      "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=800"
+    ],
+    "videoUrl": "",
+    "inventory": 75,
+    "digitalFileUrl": "",
+    "variants": [
+      { "name": "Style", "options": ["Watercolor", "Line Art", "Pop Art"], "prices": [65.00, 55.00, 75.00] }
+    ],
+    "rating": 5.0,
+    "reviewCount": 287,
+    "salesCount": 821,
+    "createdAt": "2024-02-28T14:15:00Z"
+  }
+]

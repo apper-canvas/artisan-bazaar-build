@@ -1,0 +1,43 @@
+[
+  {
+    "Id": 1,
+    "productId": 1,
+    "customerId": 1,
+    "customerName": "Sarah Johnson",
+    "orderId": 1,
+    "rating": 5,
+    "text": "Absolutely beautiful! The colors are even more vibrant in person. Perfect addition to my living room.",
+    "media": [
+      "https://images.unsplash.com/photo-1582582621959-48d27397dc69?w=400",
+      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=400"
+    ],
+    "isApproved": true,
+    "createdAt": "2024-02-05T14:20:00Z"
+  },
+  {
+    "Id": 2,
+    "productId": 2,
+    "customerId": 3,
+    "customerName": "Emily Rodriguez",
+    "orderId": 3,
+    "rating": 5,
+    "text": "Stunning piece! The craftsmanship is incredible and it looks exactly like the photos. Fast shipping too!",
+    "media": [
+      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400"
+    ],
+    "isApproved": true,
+    "createdAt": "2024-02-25T10:30:00Z"
+  },
+  {
+    "Id": 3,
+    "productId": 7,
+    "customerId": 4,
+    "customerName": "David Thompson",
+    "orderId": 15,
+    "rating": 4,
+    "text": "Love these mugs! They're the perfect size and the glaze is gorgeous. One arrived with a tiny chip but seller made it right immediately.",
+    "media": [],
+    "isApproved": true,
+    "createdAt": "2024-02-28T16:45:00Z"
+  }
+]

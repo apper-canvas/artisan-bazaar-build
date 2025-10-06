@@ -1,22 +1,23 @@
-import { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
-import ApperIcon from "@/components/ApperIcon";
-import Button from "@/components/atoms/Button";
-import SearchBar from "@/components/molecules/SearchBar";
+import { AnimatePresence, motion } from "framer-motion";
 import { useCart } from "@/hooks/useCart";
+import ApperIcon from "@/components/ApperIcon";
+import SearchBar from "@/components/molecules/SearchBar";
 import Select from "@/components/atoms/Select";
+import Button from "@/components/atoms/Button";
 const Header = () => {
-const navigate = useNavigate();
+  const navigate = useNavigate();
   const { cartItems } = useCart();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [userRole, setUserRole] = useState(() => {
     return localStorage.getItem("userRole") || "customer";
   });
-
+  
   useEffect(() => {
     localStorage.setItem("userRole", userRole);
   }, [userRole]);
+  
   const handleSearch = (query) => {
     if (query.trim()) {
       navigate(`/browse?search=${encodeURIComponent(query)}`);
@@ -41,7 +42,7 @@ const navigate = useNavigate();
             <ApperIcon name="Package" className="w-4 h-4" />
             <span>Free shipping on orders over $50</span>
           </div>
-          <div className="hidden md:flex items-center gap-4">
+<div className="hidden md:flex items-center gap-4">
             <Link to="/seller/register" className="hover:underline">
               Become a Seller
             </Link>
@@ -95,7 +96,11 @@ const navigate = useNavigate();
             <div className="hidden lg:block w-32">
               <Select
                 value={userRole}
-                onChange={(e) => setUserRole(e.target.value)}
+                onChange={(e) => {
+                  const newRole = e.target.value;
+                  setUserRole(newRole);
+                  localStorage.setItem("userRole", newRole);
+                }}
                 className="text-sm"
               >
                 <option value="customer">Customer</option>
@@ -103,10 +108,15 @@ const navigate = useNavigate();
                 <option value="admin">Admin</option>
               </Select>
             </div>
-            <Link to="/cart" className="relative">
-              <Button variant="ghost" size="sm">
-                <ApperIcon name="ShoppingCart" className="w-5 h-5" />
-                {cartItems.length > 0 && (
+
+<Link to="/cart">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="relative"
+              >
+                <ApperIcon name="ShoppingCart" className="w-6 h-6" />
+                {cartItems && cartItems.length > 0 && (
                   <motion.span
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
@@ -165,55 +175,61 @@ const navigate = useNavigate();
             className="lg:hidden border-t border-gray-200 bg-white overflow-hidden"
           >
             <div className="px-4 py-4 space-y-3">
-              <div className="mb-4">
+<div className="mb-4">
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Role
                 </label>
                 <Select
                   value={userRole}
-                  onChange={(e) => setUserRole(e.target.value)}
+                  onChange={(e) => {
+                    const newRole = e.target.value;
+                    setUserRole(newRole);
+                    localStorage.setItem("userRole", newRole);
+                  }}
                 >
                   <option value="customer">Customer</option>
                   <option value="seller">Seller</option>
                   <option value="admin">Admin</option>
                 </Select>
               </div>
-              
-              <Link
-                to="/browse"
-                className="block py-2 text-gray-700 hover:text-primary font-medium"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Browse All
-              </Link>
-              {categories.map((category) => (
+
+<nav className="space-y-1">
                 <Link
-                  key={category}
-                  to={`/browse?category=${encodeURIComponent(category)}`}
-                  className="block py-2 text-gray-700 hover:text-primary"
+                  to="/browse"
+                  className="block py-2 text-gray-700 hover:text-primary font-medium"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  {category}
+                  Browse All
                 </Link>
-              ))}
-              <div className="pt-3 border-t border-gray-200">
-                <Link
-                  to="/seller/register"
-                  className="block py-2 text-primary font-medium"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Become a Seller
-                </Link>
-                {(userRole === "seller" || userRole === "admin") && (
+                {categories.map((category) => (
                   <Link
-                    to="/seller/dashboard"
+                    key={category}
+                    to={`/browse?category=${encodeURIComponent(category)}`}
+                    className="block py-2 text-gray-700 hover:text-primary"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {category}
+                  </Link>
+                ))}
+                <div className="pt-3 border-t border-gray-200">
+                  <Link
+                    to="/seller/register"
                     className="block py-2 text-primary font-medium"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    Seller Dashboard
+                    Become a Seller
                   </Link>
-                )}
-              </div>
+                  {(userRole === "seller" || userRole === "admin") && (
+                    <Link
+                      to="/seller/dashboard"
+                      className="block py-2 text-primary font-medium"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Seller Dashboard
+                    </Link>
+                  )}
+                </div>
+              </nav>
             </div>
           </motion.div>
         )}

@@ -1,17 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import ApperIcon from "@/components/ApperIcon";
 import Button from "@/components/atoms/Button";
 import SearchBar from "@/components/molecules/SearchBar";
 import { useCart } from "@/hooks/useCart";
-
+import Select from "@/components/atoms/Select";
 const Header = () => {
-  const navigate = useNavigate();
+const navigate = useNavigate();
   const { cartItems } = useCart();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [userRole] = useState("customer");
+  const [userRole, setUserRole] = useState(() => {
+    return localStorage.getItem("userRole") || "customer";
+  });
 
+  useEffect(() => {
+    localStorage.setItem("userRole", userRole);
+  }, [userRole]);
   const handleSearch = (query) => {
     if (query.trim()) {
       navigate(`/browse?search=${encodeURIComponent(query)}`);
@@ -66,7 +71,7 @@ const Header = () => {
           </div>
 
           {/* Actions */}
-          <div className="flex items-center gap-3 ml-auto">
+<div className="flex items-center gap-3 ml-auto">
             <Button
               variant="ghost"
               size="sm"
@@ -76,7 +81,7 @@ const Header = () => {
               Browse
             </Button>
             
-            {userRole === "seller" && (
+            {(userRole === "seller" || userRole === "admin") && (
               <Button
                 variant="ghost"
                 size="sm"
@@ -87,6 +92,17 @@ const Header = () => {
               </Button>
             )}
 
+            <div className="hidden lg:block w-32">
+              <Select
+                value={userRole}
+                onChange={(e) => setUserRole(e.target.value)}
+                className="text-sm"
+              >
+                <option value="customer">Customer</option>
+                <option value="seller">Seller</option>
+                <option value="admin">Admin</option>
+              </Select>
+            </div>
             <Link to="/cart" className="relative">
               <Button variant="ghost" size="sm">
                 <ApperIcon name="ShoppingCart" className="w-5 h-5" />
@@ -139,7 +155,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+{/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -149,6 +165,20 @@ const Header = () => {
             className="lg:hidden border-t border-gray-200 bg-white overflow-hidden"
           >
             <div className="px-4 py-4 space-y-3">
+              <div className="mb-4">
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Role
+                </label>
+                <Select
+                  value={userRole}
+                  onChange={(e) => setUserRole(e.target.value)}
+                >
+                  <option value="customer">Customer</option>
+                  <option value="seller">Seller</option>
+                  <option value="admin">Admin</option>
+                </Select>
+              </div>
+              
               <Link
                 to="/browse"
                 className="block py-2 text-gray-700 hover:text-primary font-medium"
@@ -174,6 +204,15 @@ const Header = () => {
                 >
                   Become a Seller
                 </Link>
+                {(userRole === "seller" || userRole === "admin") && (
+                  <Link
+                    to="/seller/dashboard"
+                    className="block py-2 text-primary font-medium"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Seller Dashboard
+                  </Link>
+                )}
               </div>
             </div>
           </motion.div>

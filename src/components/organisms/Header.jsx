@@ -162,7 +162,7 @@ const [userRole, setUserRole] = useState(() => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center gap-6 py-3 overflow-x-auto">
 {categories.map((category) => (
-              <Link
+<Link
                 key={category}
                 to={`/browse?category=${encodeURIComponent(category)}`}
                 className="text-sm font-medium text-gray-700 hover:text-primary whitespace-nowrap transition-colors"
@@ -204,36 +204,52 @@ const [userRole, setUserRole] = useState(() => {
               </div>
 
               <nav className="space-y-1">
-                <Link
-to="/browse"
+<Link
+                  to="/browse"
                   className="block py-2 text-gray-700 hover:text-primary font-medium"
+                  onClick={() => setMobileMenuOpen(false)}
                 >
                   Browse All
                 </Link>
                 {categories.map((category) => (
-<Link
+                  <Link
                     key={category}
                     to={`/browse?category=${encodeURIComponent(category)}`}
                     className="block py-2 text-gray-700 hover:text-primary"
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     {category}
                   </Link>
                 ))}
                 <div className="border-t pt-2 mt-2">
-<Link
+                  <Link
                     to="/seller/register"
                     className="block py-2 text-primary font-medium"
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     Become a Seller
                   </Link>
-{(userRole === "seller" || userRole === "admin") && (
+                  {(userRole === "seller" || userRole === "admin") && (
                     <Link
                       to="/seller/dashboard"
                       className="block py-2 text-primary font-medium"
+                      onClick={() => setMobileMenuOpen(false)}
                     >
                       Seller Dashboard
                     </Link>
                   )}
+                </div>
+                <div className="border-t pt-2 mt-2">
+                  <div className="text-xs font-medium text-gray-500 mb-2">Test Role</div>
+                  <Select
+                    value={userRole}
+                    onChange={(e) => handleRoleChange(e.target.value)}
+                    className="w-full"
+                  >
+                    <option value="customer">Customer</option>
+                    <option value="seller">Seller</option>
+                    <option value="admin">Admin</option>
+                  </Select>
                 </div>
               </nav>
             </div>

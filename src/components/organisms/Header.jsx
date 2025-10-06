@@ -205,43 +205,31 @@ const [userRole, setUserRole] = useState(() => {
 
               <nav className="space-y-1">
                 <Link
-                  to="/browse"
+to="/browse"
                   className="block py-2 text-gray-700 hover:text-primary font-medium"
-                  onClick={(e) => {
-                    setMobileMenuOpen(false);
-                  }}
                 >
                   Browse All
                 </Link>
                 {categories.map((category) => (
-                  <Link
+<Link
                     key={category}
                     to={`/browse?category=${encodeURIComponent(category)}`}
                     className="block py-2 text-gray-700 hover:text-primary"
-                    onClick={(e) => {
-                      setMobileMenuOpen(false);
-                    }}
                   >
                     {category}
                   </Link>
                 ))}
                 <div className="border-t pt-2 mt-2">
-                  <Link
+<Link
                     to="/seller/register"
                     className="block py-2 text-primary font-medium"
-                    onClick={(e) => {
-                      setMobileMenuOpen(false);
-                    }}
                   >
                     Become a Seller
                   </Link>
-                  {(userRole === "seller" || userRole === "admin") && (
+{(userRole === "seller" || userRole === "admin") && (
                     <Link
                       to="/seller/dashboard"
                       className="block py-2 text-primary font-medium"
-                      onClick={(e) => {
-                        setMobileMenuOpen(false);
-                      }}
                     >
                       Seller Dashboard
                     </Link>

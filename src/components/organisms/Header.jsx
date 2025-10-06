@@ -10,13 +10,19 @@ const Header = () => {
   const navigate = useNavigate();
   const { cartItems } = useCart();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [userRole, setUserRole] = useState(() => {
-    return localStorage.getItem("userRole") || "customer";
+const [userRole, setUserRole] = useState(() => {
+    const stored = localStorage.getItem("userRole");
+    return stored || "customer";
   });
   
   useEffect(() => {
     localStorage.setItem("userRole", userRole);
   }, [userRole]);
+  
+  const handleRoleChange = (newRole) => {
+    setUserRole(newRole);
+    localStorage.setItem("userRole", newRole);
+  };
   
   const handleSearch = (query) => {
     if (query.trim()) {
@@ -43,6 +49,10 @@ const Header = () => {
             <span>Free shipping on orders over $50</span>
           </div>
 <div className="hidden md:flex items-center gap-4">
+            <div className="flex items-center gap-2 px-3 py-1 bg-white/20 rounded-full">
+              <ApperIcon name="User" className="w-4 h-4" />
+              <span className="text-sm font-medium capitalize">{userRole}</span>
+            </div>
             <Link to="/seller/register" className="hover:underline">
               Become a Seller
             </Link>
@@ -93,15 +103,14 @@ const Header = () => {
               </Button>
             )}
 
-            <div className="hidden lg:block w-32">
+            <div className="hidden lg:flex items-center gap-2">
+              <label className="text-sm font-medium text-gray-700 whitespace-nowrap">
+                Role:
+              </label>
               <Select
                 value={userRole}
-                onChange={(e) => {
-                  const newRole = e.target.value;
-                  setUserRole(newRole);
-                  localStorage.setItem("userRole", newRole);
-                }}
-                className="text-sm"
+                onChange={(e) => handleRoleChange(e.target.value)}
+                className="text-sm min-w-[120px]"
               >
                 <option value="customer">Customer</option>
                 <option value="seller">Seller</option>
@@ -174,23 +183,24 @@ const Header = () => {
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden border-t border-gray-200 bg-white overflow-hidden"
 >
-            <div className="px-4 py-4 space-y-3">
-              <div className="mb-4">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Role
+<div className="px-4 py-4 space-y-3">
+              <div className="mb-4 p-4 bg-surface rounded-lg border-2 border-primary/20">
+                <label className="block text-sm font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                  <ApperIcon name="User" className="w-4 h-4" />
+                  Switch Role (for testing)
                 </label>
                 <Select
                   value={userRole}
-                  onChange={(e) => {
-                    const newRole = e.target.value;
-                    setUserRole(newRole);
-                    localStorage.setItem("userRole", newRole);
-                  }}
+                  onChange={(e) => handleRoleChange(e.target.value)}
+                  className="w-full"
                 >
                   <option value="customer">Customer</option>
                   <option value="seller">Seller</option>
                   <option value="admin">Admin</option>
                 </Select>
+                <p className="mt-2 text-xs text-gray-600">
+                  Current role: <span className="font-semibold capitalize text-primary">{userRole}</span>
+                </p>
               </div>
 
               <nav className="space-y-1">
